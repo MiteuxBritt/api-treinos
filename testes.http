@@ -12,7 +12,6 @@
 ### 1 - Listar todos os treinos            -> espera 200 e um array
 GET {{url}}/treinos
 
-
 ### 2 - Criar um treino                    -> espera 201
 POST {{url}}/treinos
 Content-Type: application/json
