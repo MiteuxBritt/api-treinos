@@ -18,7 +18,7 @@ app.use(express.json());
 // Conecta ao banco (cria o arquivo treinos.db se nao existir)
 
 const db = new DatabaseSync('treinos.db');
-sudo
+
 // Garante que a tabela existe
 db.exec(`
     CREATE TABLE IF NOT EXISTS treinos (
@@ -73,13 +73,17 @@ app.post('/treinos', (req, res) => {
     if (erro !== null) {
         return res.status(400).json({ erro: erro });
     }
+
+    const resultado = db.prepare(
+        'INSERT INTO treinos (nome, duracao) VALUES (?, ?)'
+    ).run(req.body.nome, req.body.duracao);
+
     const treino = {
-        id: proximoId,
+        id: Number(resultado.lastInsertRowid),
         nome: req.body.nome,
         duracao: req.body.duracao
     };
-    proximoId = proximoId + 1;
-    db.prepare('INSERT INTO treinos (nome, duracao) VALUES (?, ?)').run(treino.nome, treino.duracao);
+
     res.status(201).json(treino);
 });
 
