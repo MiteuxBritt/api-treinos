@@ -15,7 +15,7 @@ const express = require('express');
 const { DatabaseSync } = require('node:sqlite');
 const app = express();
 app.use(express.json());
-// Conecta ao banco (cria o arquivo treinos.db se nao existir)
+// Conecta ao banco, cria o arquivo treinos.db se nao existir,
 
 const db = new DatabaseSync('treinos.db');
 
