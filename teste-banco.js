@@ -1,23 +1,22 @@
 const { DatabaseSync } = require('node:sqlite');
-const db = new DatabaseSync('treinos.db');
+const db = new DatabaseSync('exercicios.db');
+const express = require('express');
+app.use(express.json());
 
 db.exec(`
-    CREATE TABLE IF NOT EXISTS treinos (
+    CREATE TABLE IF NOT EXISTS exercicios (
         id      INTEGER PRIMARY KEY AUTOINCREMENT,
         nome    TEXT    NOT NULL,
         duracao INTEGER NOT NULL
     )
 `);
 
-const inserir = db.prepare('INSERT INTO treinos (nome, duracao) VALUES (?, ?)');
-const deletar = db.prepare('DELETE FROM treinos WHERE id = ?');
+const inserirT = db.prepare('INSERT INTO exercicios (nome, duracao) VALUES (?, ?)');
+const deletarT = db.prepare('DELETE FROM exercicios WHERE id = ?');
 
-inserir.run('Treino A', 30);
-inserir.run('Treino B', 45);
-inserir.run('Treino C', 60);
-inserir.run('Treino D', 90);
+inserirT.run('cu', 12);
+inserirT.run('cuzes', 10);
 
-deletar.run(2);
-deletar.run(4);
+const saida = db.prepare('SELECT * FROM exercicios').all();
+console.log(saida);
 
-console.log(db.prepare('SELECT * FROM treinos').all());

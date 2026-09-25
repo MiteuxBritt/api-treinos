@@ -103,7 +103,7 @@ memória. Agora estão no `treinos.db`.
 O arquivo `treinos.db` é da sua máquina e não vai para o GitHub, porque o
 `.gitignore` já ignora `*.db`. O que a gente versiona é o código.
 
-## Exercícios
+## Exercícios AQUIIIIIIIIIIII CU
 
 Os três primeiros são os mesmos desafios da Aula 02, agora com banco. Compare
 os dois jeitos: a rota é a mesma, muda quem faz o trabalho de buscar.
