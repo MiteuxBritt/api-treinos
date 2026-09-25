@@ -9,9 +9,15 @@ db.exec(`
     )
 `);
 
-db.prepare('DELETE FROM treinos WHERE id = ?').run(1);
+const inserir = db.prepare('INSERT INTO treinos (nome, duracao) VALUES (?, ?)');
+const deletar = db.prepare('DELETE FROM treinos WHERE id = ?');
 
-db.prepare('INSERT INTO treinos (nome, duracao) VALUES (?, ?)')
-    .run('Costas', 50)
+inserir.run('Treino A', 30);
+inserir.run('Treino B', 45);
+inserir.run('Treino C', 60);
+inserir.run('Treino D', 90);
+
+deletar.run(2);
+deletar.run(4);
 
 console.log(db.prepare('SELECT * FROM treinos').all());
