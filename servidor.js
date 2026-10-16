@@ -27,7 +27,7 @@ db.exec(`
         duracao INTEGER NOT NULL
     )
 `);
-
+''
 // ------------------------------------------------------------
 // Validacao
 // Escreva a funcao validarTreino(corpo), que devolve a mensagem
@@ -74,15 +74,13 @@ app.post('/treinos', (req, res) => {
         return res.status(400).json({ erro: erro });
     }
 
-    const resultado = db.prepare(
-        'INSERT INTO treinos (nome, duracao) VALUES (?, ?)'
-    ).run(req.body.nome, req.body.duracao);
+    const resultado = db
+        .prepare('INSERT INTO treinos (nome, duracao) VALUES (?, ?)')
+        .run(req.body.nome, req.body.duracao);
 
-    const treino = {
-        id: Number(resultado.lastInsertRowid),
-        nome: req.body.nome,
-        duracao: req.body.duracao
-    };
+    const novo = db
+        .prepare('SELECT * FROM treinos WHERE id = ?')
+        .get(resultado.lastInsertRowid);
 
     res.status(201).json(treino);
 });
@@ -116,7 +114,7 @@ app.delete('/treinos/:id', (req, res) => {
         return res.status(404).json({ erro: 'Treino nao encontrado' });
     }
     db.prepare('DELETE FROM treinos WHERE id = ?').run(parseInt(req.params.id));
-    res.status(200).json({ mensagem: 'Treino removido com sucesso' });
+    res.status(204).json({ mensagem: 'Treino removido com sucesso' });
 });
 
 

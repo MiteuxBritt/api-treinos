@@ -17,8 +17,8 @@ POST {{url}}/treinos
 Content-Type: application/json
 
 {
-    "nome": "Peito e triceps",
-    "duracao": 60
+    "nome": "Alguma coisa",
+    "duracao": 30
 }
 
 ### 3 - Criar outro treino                 -> espera 201
