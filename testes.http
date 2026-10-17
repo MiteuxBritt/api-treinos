@@ -36,7 +36,7 @@ GET {{url}}/treinos/1
 
 
 ### 5 - Buscar um treino que nao existe    -> espera 404
-GET {{url}}/treinos/5
+GET {{url}}/treinos/1000
 
 
 ### 6 - Criar sem o nome                   -> espera 400
