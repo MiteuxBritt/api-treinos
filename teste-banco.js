@@ -1,6 +1,7 @@
 const { DatabaseSync } = require('node:sqlite');
 const db = new DatabaseSync('exercicios.db');
 const express = require('express');
+const app = require(express);
 app.use(express.json());
 
 db.exec(`
