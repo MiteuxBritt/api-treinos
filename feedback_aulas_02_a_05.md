@@ -1,0 +1,3 @@
+# Feedback das Aulas 02 a 05
+
+**MATHEUS RADIN BITTENCOURT — nota atual: 0,29.** Na Aula 02, entregou a API com pequenas pendências e recebeu 0,19. Na Aula 03, migrou somente a API para SQLite, sem os desafios extras; recebeu 0,10. Na Aula 04, existe estrutura de camadas e os exercícios de banco e Service foram iniciados, mas foi usado `better-sqlite3` no lugar do `node:sqlite` apresentado em aula. Além disso, a entrega funcional completa não foi confirmada. Por utilizar uma biblioteca externa não ensinada, a Aula 04 deve receber desconto de 0,25 ponto quando a nota da etapa for lançada. A Aula 05 não foi confirmada.
