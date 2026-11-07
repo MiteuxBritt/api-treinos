@@ -88,3 +88,19 @@ DELETE {{url}}/treinos/99999
 
 ### 12 - Listar de novo pra conferir       -> espera 200
 GET {{url}}/treinos
+
+
+### 13 - Fazer o Login com usuario valido -> espera 200
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "usuario": "diego",
+    "senha": "1234"
+}
+
+### 14 - Consultar o perfil -> espera 200
+GET http://localhost:3000/perfil
+
+### 15 - Fazer logout -> espera 204
+POST http://localhost:3000/logout

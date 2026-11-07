@@ -14,7 +14,6 @@ function lerCookie(req, nome) {
     return null;
 }
 
-
 function login(req, res) {
     const usuario = (req.body.usuario ?? '').trim();
     const senha = req.body.senha ?? '';
@@ -51,6 +50,10 @@ function perfil(req, res) {
 
 function logout(req, res) {
     const token = lerCookie(req, 'sid');
+
+    if(token !== null) {
+        sessoes.encerrar(token);
+    }
 
     res.clearCookie('sid');
     res.status(204).end();

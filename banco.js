@@ -1,5 +1,5 @@
-const Database = require('better-sqlite3');
-const db = new Database('treinos.db');
+const { DatabaseSync } = require('node:sqlite');
+const db = new DatabaseSync('treinos.db');
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS treinos (
@@ -9,8 +9,6 @@ db.exec(`
     )
 `);
 
-module.exports = db;
-
 db.exec(`
     CREATE TABLE IF NOT EXISTS usuarios  (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,9 +17,13 @@ db.exec(`
     )
 `);
 
-const qtd = db.prepare('SELECT COUNT (*) AS n FROM usuarios').get().n;
+const qtd = db.prepare('SELECT COUNT (*) AS n FROM treinos').get().n;
+
 if (qtd === 0) {
     const ins = db.prepare('INSERT INTO usuarios (usuario, senha) VALUES (?, ?)');
+
     ins.run('diego', '1234');
     ins.run('aluno', 'senha');
 }
+
+module.exports = db;
