@@ -104,3 +104,39 @@ GET http://localhost:3000/perfil
 
 ### 15 - Fazer logout -> espera 204
 POST http://localhost:3000/logout
+
+### 16 - Login Correto -> espera 200
+POST http://localhost:3000/login 
+Content-Type: application/json
+
+{
+    "usuario": "diego",
+    "senha": "1234"
+}
+
+### 17 - Perfil com a Sessão -> espera 200
+GET http://localhost:3000/perfil
+
+### 18 - Senha Errada -> espera 401
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "usuario": "diego",
+    "senha": "errada"
+}
+
+### 19 - User inexistente -> espera 401
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "usuario": "inexistente",
+    "senha": "1234"
+}
+
+### 20 - Logout -> espera 204
+POST http://localhost:3000/logout
+
+### 21 - Perfil pós-logout -> espera 401
+GET http://localhost:3000/perfil
