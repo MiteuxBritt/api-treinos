@@ -5,7 +5,7 @@ function buscarPorUsuario(usuario) {
 }
 
 function buscarPorId(id) {
-    return db.prepare('SELECT * FROM usuarios WHERE id = ?').get(id);
+    return db.prepare('SELECT id, usuario FROM usuarios WHERE id = ?').get(id);
 }
 
 module.exports = { buscarPorUsuario, buscarPorId };
