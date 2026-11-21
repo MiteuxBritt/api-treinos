@@ -1,3 +1,15 @@
-Matheus, seu repositório fechou em 2,3 de 2,5. Na aula 2, a API passou nos 10 testes no commit 9b0adfa, de 18/10. Na aula 3, a migração para SQLite passou em 7 de 7 testes e em 0 de 3 exercícios (melhor resultado no commit 9b0adfa, de 18/10). Faltou: nos exercícios, o GET /treinos/total; o filtro ?minimo=; e a ordenação do maior para o menor. Na aula 4, 6 de 8 testes passaram no commit 9b9ec85, de 08/11. Faltou: o teste-banco2.js não existe ou termina com erro; e o teste-service.js não existe ou termina com erro. A regra dos 180 minutos, que devia estar em validarTreino no treinosService.js, não foi encontrada. Na aula 5, 6 de 8 testes passaram no commit 26bc166, de 07/11. Faltou: o GET /perfil com o cookie não devolve o usuário logado; e as rotas de treino não exigem login (devia dar 401 sem cookie e liberar com cookie). Na aula 6, 10 de 10 testes passaram no commit 9b9ec85, de 08/11. O testes.http não mostra todos os casos pedidos (login, perfil, logout, senha errada e duas sessões).
+Matheus, sua nota do repositório ficou em 2,8 de 3,0.
 
-Se tiver dúvida, fala na próxima aula.
+Olhei todos os seus commits até 20/11 às 23h59 e fiquei com o melhor resultado de cada aula, então o que você reentregou já entrou na conta. Cada aula vale um quinto da nota, metade pela entrega e metade pelos testes que passaram.
+
+Na aula 2 sua API passou nos 10 testes, no commit 1cc984f de 19/11.
+
+Na aula 3 passaram 7 de 7 testes do SQLite, no commit 9b0adfa de 18/10. Nenhum dos 3 exercícios (total, filtro mínimo e ordenação) funcionou.
+
+Na aula 4 passaram 7 de 8 testes, no commit 1cc984f de 19/11. Os testes mostram que o teste-banco2.js não existe ou dá erro. A regra dos 180 minutos está no treinosService.js.
+
+Na aula 5 passaram 7 de 8 testes, no commit 1cc984f de 19/11. Os testes mostram que as rotas de treino não pedem login.
+
+Na aula 6 passaram 10 de 10 testes, no commit 1cc984f de 19/11. O testes.http com login, perfil e logout está lá.
+
+As notas estão fechadas. Se tiver dúvida, fala na próxima aula.
